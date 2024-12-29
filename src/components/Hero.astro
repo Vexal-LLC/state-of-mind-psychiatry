@@ -1,0 +1,104 @@
+---
+import { Image } from "astro:assets";
+import brainPuzzle from "../assets/brain-puzzle.svg";
+---
+
+<div class="relative isolate">
+  <div class="overflow-hidden">
+    <div class="mx-auto max-w-7xl px-6 pb-32 pt-24 sm:pt-16 lg:px-8">
+      <div
+        class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center lg:justify-betwee"
+      >
+        <!-- Left content -->
+        <div class="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
+          <div class="flex">
+            <div
+              class="group relative rounded-full px-4 py-1.5 font-sans text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 transition-all duration-300 hover:ring-primary/20 tracking-tight"
+            >
+              Trusted by 100+ clients.
+              <a
+                href="#"
+                class="ml-2 inline-flex items-center font-semibold text-primary transition-colors hover:text-primary-dark"
+              >
+                See success stories
+                <svg
+                  class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h1
+            class="mt-10 text-pretty font-serif text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
+          >
+            Transform <span class="text-secondary relative">
+              Struggles
+              <span class="absolute -bottom-1 left-0 h-1 w-full bg-secondary/20"
+              ></span>
+            </span> into
+            <span class="text-secondary relative">
+              Strengths
+              <span class="absolute -bottom-1 left-0 h-1 w-full bg-secondary/20"
+              ></span>
+            </span>
+          </h1>
+          <div class="relative mt-8">
+            <!-- Shape container that text will flow around -->
+            <div
+              class="hidden sm:block float-right h-32 w-2/3"
+              style="shape-outside: polygon(80% 42%, 100% 30%, 100% 100%, 0% 100%); clip-path: polygon(80% 42%, 100% 30%, 100% 100%, 0% 100%);"
+            >
+            </div>
+
+            <!-- Text content -->
+            <p
+              class="text-pretty text-lg font-medium text-gray-500 sm:text-xl/8 rounded-lg"
+            >
+              Expert outpatient mental health care that adapts to your unique
+              journey. Our comprehensive approach helps you build a stronger,
+              more resilient future and <span class="font-bold"
+                >State of Mind</span
+              >.
+            </p>
+          </div>
+          <div class="mt-10 flex items-center gap-x-6">
+            <a
+              href="#"
+              class="relative rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-primary-light"
+            >
+              Book Now
+            </a>
+            <a
+              href="#"
+              class="group relative text-sm font-semibold text-gray-900"
+            >
+              Get to know us
+              <span
+                class="ml-1 inline-block transition-transform group-hover:translate-x-1"
+                >→</span
+              >
+              <span
+                class="absolute -bottom-1 left-0 h-[3px] w-full origin-left scale-x-0 bg-accent-orange transition-transform duration-300 group-hover:scale-x-100"
+              ></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right side image with enhanced styling -->
+        <div class="mt-14 lg:mt-0">
+          <Image
+            src={brainPuzzle}
+            alt="Mind illustration"
+            class="relative aspect-[3/4] w-full rounded-xl object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

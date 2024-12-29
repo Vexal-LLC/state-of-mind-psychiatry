@@ -1,0 +1,133 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import Logo from "../assets/logo.svg?raw";
+---
+
+<!-- Top Banner -->
+<div class="bg-primary text-white">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="flex items-center justify-between h-10 text-sm">
+      <div class="flex items-center gap-x-8">
+        <a
+          href="tel:+16622687100"
+          class="flex items-center gap-1 hover:text-neutral-100"
+        >
+          <Icon name="material-symbols:call" class="w-5 h-5 text-secondary" />
+          (662) 268-7100
+        </a>
+        <div class="hidden md:flex items-center gap-1">
+          <Icon
+            name="material-symbols:schedule"
+            class="w-5 h-5 text-secondary"
+          />
+          Mon-Fri: 9am-5pm
+        </div>
+      </div>
+      <div class="hidden md:flex items-center gap-1">
+        <Icon
+          name="material-symbols:location-on"
+          class="w-5 h-5 text-secondary"
+        />
+        12183 Highway 182 W, Starkville, MS 39759
+      </div>
+    </div>
+  </div>
+</div>
+
+<header
+  class="relative z-50 bg-white lg:w-3/4 lg:mx-auto lg:rounded-xl lg:rounded-t-none shadow-sm"
+>
+  <!-- Main Navigation -->
+  <nav class="mx-auto max-w-7xl px-6 lg:px-8" aria-label="Main navigation">
+    <div class="flex h-20 items-center justify-between">
+      <!-- Logo/Brand -->
+      <div class="flex lg:flex-1">
+        <a href="/" class="-m-1.5 p-1.5 flex items-center gap-2">
+          <!-- TODO: Add logo -->
+          <span class="font-medium font-sans text-xl text-gray-800">
+            State of Mind Psychiatry
+          </span>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-x-4">
+        <!-- Mobile menu button -->
+        <div class="flex lg:hidden">
+          <button
+            type="button"
+            class="text-gray-700 -m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Desktop navigation -->
+        <div class="hidden lg:flex lg:gap-x-12">
+          <a
+            href="/"
+            class="group text-sm font-semibold leading-6 text-primary"
+          >
+            <p class="duration-[200ms] ease-in-out transition-all">Home</p>
+            <span
+              class="block h-[3px] bg-accent-orange transition-all duration-[200ms] ease-in-out scale-x-0 group-hover:scale-x-100"
+            ></span>
+          </a>
+          <a
+            href="/about"
+            class="group text-sm font-semibold leading-6 text-gray-900"
+          >
+            <p class="duration-[200ms] ease-in-out transition-all">About</p>
+            <span
+              class="block h-[3px] bg-accent-orange transition-all duration-[200ms] ease-in-out scale-x-0 group-hover:scale-x-100"
+            ></span>
+          </a>
+          <a
+            href="/services"
+            class="group text-sm font-semibold leading-6 text-gray-900"
+          >
+            <p class="duration-[200ms] ease-in-out transition-all">Services</p>
+            <span
+              class="block h-[3px] bg-accent-orange transition-all duration-[200ms] ease-in-out scale-x-0 group-hover:scale-x-100"
+            ></span>
+          </a>
+          <a
+            href="/contact"
+            class="group text-sm font-semibold leading-6 text-gray-900"
+          >
+            <p class="duration-[200ms] ease-in-out transition-all">Contact</p>
+            <span
+              class="block h-[3px] bg-accent-orange transition-all duration-[200ms] ease-in-out scale-x-0 group-hover:scale-x-100"
+            ></span>
+          </a>
+        </div>
+
+        <!-- Divider -->
+        <div class="hidden lg:block h-8 w-px bg-neutral-500 mx-4"></div>
+
+        <!-- CTA button -->
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a
+            href="#"
+            class="relative rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-primary-light"
+          >
+            Get Help ?
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

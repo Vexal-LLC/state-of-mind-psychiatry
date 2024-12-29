@@ -5,9 +5,9 @@ import brainPuzzle from "../assets/brain-puzzle.svg";
 
 <div class="relative isolate">
   <div class="overflow-hidden">
-    <div class="mx-auto max-w-7xl px-6 pb-32 pt-24 sm:pt-16 lg:px-8">
+    <div class="mx-auto max-w-7xl px-6 pb-32 pt-12 sm:pt-8 lg:px-8">
       <div
-        class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center lg:justify-betwee"
+        class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center lg:justify-between"
       >
         <!-- Left content -->
         <div class="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
@@ -35,7 +35,7 @@ import brainPuzzle from "../assets/brain-puzzle.svg";
             </div>
           </div>
           <h1
-            class="mt-10 text-pretty font-serif text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
+            class="mt-8 text-pretty font-serif text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
           >
             Transform <span class="text-secondary relative">
               Struggles
@@ -49,16 +49,8 @@ import brainPuzzle from "../assets/brain-puzzle.svg";
             </span>
           </h1>
           <div class="relative mt-8">
-            <!-- Shape container that text will flow around -->
-            <div
-              class="hidden sm:block float-right h-32 w-2/3"
-              style="shape-outside: polygon(80% 42%, 100% 30%, 100% 100%, 0% 100%); clip-path: polygon(80% 42%, 100% 30%, 100% 100%, 0% 100%);"
-            >
-            </div>
-
-            <!-- Text content -->
             <p
-              class="text-pretty text-lg font-medium text-gray-500 sm:text-xl/8 rounded-lg"
+              class="text-pretty text-lg font-medium text-gray-500 sm:text-xl/8 relative"
             >
               Expert outpatient mental health care that adapts to your unique
               journey. Our comprehensive approach helps you build a stronger,
@@ -69,10 +61,10 @@ import brainPuzzle from "../assets/brain-puzzle.svg";
           </div>
           <div class="mt-10 flex items-center gap-x-6">
             <a
-              href="#"
-              class="relative rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-primary-light"
+              href="/contact"
+              class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-black text-white hover:bg-primary-light group transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             >
-              Book Now
+              Schedule Now
             </a>
             <a
               href="#"
@@ -91,7 +83,7 @@ import brainPuzzle from "../assets/brain-puzzle.svg";
         </div>
 
         <!-- Right side image with enhanced styling -->
-        <div class="mt-14 lg:mt-0">
+        <div class="hidden lg:block mt-14 lg:mt-0">
           <Image
             src={brainPuzzle}
             alt="Mind illustration"

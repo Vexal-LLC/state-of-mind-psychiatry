@@ -68,6 +68,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
+      sharp:
+        specifier: ^0.33.5
+        version: 0.33.5
       tailwindcss:
         specifier: ^3.4.17
         version: 3.4.17
@@ -81,6 +84,9 @@ importers:
       '@iconify-json/material-symbols':
         specifier: ^1.2.12
         version: 1.2.12
+      '@iconify-json/mdi':
+        specifier: ^1.2.2
+        version: 1.2.2
       '@types/node':
         specifier: ^22.10.2
         version: 22.10.2
@@ -576,6 +582,9 @@ packages:
 
   '@iconify-json/material-symbols@1.2.12':
     resolution: {integrity: sha512-2p2T13Kccy7R2HNbdiVsIcHxjp4s9a+iKlfbtt29hldG1pVNaPIlMALNA9bjdEwPjwsVFe06INCbjCRc68JysQ==}
+
+  '@iconify-json/mdi@1.2.2':
+    resolution: {integrity: sha512-84aznJXzfGdbOXGe8xB7E5uNAb7Yo5IABwTgq2X3kczb819qZeS9eL31bTVn7wJdCLK5ieaoUc2GTS3QYIkJ6g==}
 
   '@iconify/tools@4.1.1':
     resolution: {integrity: sha512-Hybu/HGhv6T8nLQhiG9rKx+ekF7NNpPOEQAy7JRSKht3s3dcFSsPccYzk24Znc9MTxrR6Gak3cg6CPP5dyvS2Q==}
@@ -3751,6 +3760,10 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
+  '@iconify-json/mdi@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify/tools@4.1.1':
     dependencies:
       '@iconify/types': 2.0.0
@@ -4693,13 +4706,11 @@ snapshots:
     dependencies:
       color-name: 1.1.4
       simple-swizzle: 0.2.2
-    optional: true
 
   color@4.2.3:
     dependencies:
       color-convert: 2.0.1
       color-string: 1.9.1
-    optional: true
 
   combined-stream@1.0.8:
     dependencies:
@@ -5296,8 +5307,7 @@ snapshots:
       is-alphabetical: 2.0.1
       is-decimal: 2.0.1
 
-  is-arrayish@0.3.2:
-    optional: true
+  is-arrayish@0.3.2: {}
 
   is-binary-path@2.1.0:
     dependencies:
@@ -6433,7 +6443,6 @@ snapshots:
       '@img/sharp-wasm32': 0.33.5
       '@img/sharp-win32-ia32': 0.33.5
       '@img/sharp-win32-x64': 0.33.5
-    optional: true
 
   shebang-command@2.0.0:
     dependencies:
@@ -6455,7 +6464,6 @@ snapshots:
   simple-swizzle@0.2.2:
     dependencies:
       is-arrayish: 0.3.2
-    optional: true
 
   sisteransi@1.0.5: {}
 

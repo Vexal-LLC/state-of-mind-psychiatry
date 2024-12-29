@@ -1,5 +1,4 @@
 import { defineCollection, z } from "astro:content";
-import { glob } from "astro/loaders";
 
 // define a collection for about a person on the team for this psychiatric clinic website
 const team = defineCollection({

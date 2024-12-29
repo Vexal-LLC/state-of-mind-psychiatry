@@ -5,31 +5,43 @@ import Logo from "../assets/logo.svg?raw";
 ---
 
 <!-- Top Banner -->
-<div class="bg-primary text-white">
+<div class="bg-primary text-neutral-300 font-light">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="flex items-center justify-between h-10 text-sm">
-      <div class="flex items-center gap-x-8">
-        <a
-          href="tel:+16622687100"
-          class="flex items-center gap-1 hover:text-neutral-100"
-        >
-          <Icon name="material-symbols:call" class="w-5 h-5 text-secondary" />
-          (662) 268-7100
-        </a>
-        <div class="hidden md:flex items-center gap-1">
-          <Icon
-            name="material-symbols:schedule"
-            class="w-5 h-5 text-secondary"
-          />
-          Mon-Fri: 9am-5pm
-        </div>
-      </div>
-      <div class="hidden md:flex items-center gap-1">
+    <div
+      class="flex flex-col sm:flex-row items-center justify-between h-auto sm:h-10 text-sm gap-y-2 sm:gap-y-0"
+    >
+      <div class="hidden sm:inline-flex items-center gap-x-1">
+        <!-- Address -->
         <Icon
           name="material-symbols:location-on"
           class="w-5 h-5 text-secondary"
         />
-        12183 Highway 182 W, Starkville, MS 39759
+        <a href="#" id="maps-link" class="hover:text-neutral-100">
+          12183 Highway 182 W Starkville, MS 39759
+        </a>
+      </div>
+
+      <div
+        class="flex flex-col sm:flex-row items-center gap-x-4 gap-y-2 sm:gap-y-0 py-2"
+      >
+        <!-- Email -->
+        <a
+          href="mailto:info@stateofmindpsychiatric.com"
+          class="flex items-center gap-1 hover:text-neutral-100"
+        >
+          info@stateofmindpsychiatric.com
+        </a>
+
+        <!-- Divider -->
+        <div class="hidden sm:block h-6 w-px bg-neutral-100"></div>
+
+        <!-- Phone -->
+        <a
+          href="tel:+16622687100"
+          class="flex items-center gap-1 hover:text-neutral-100"
+        >
+          +1 (662) 268-7100
+        </a>
       </div>
     </div>
   </div>
@@ -58,20 +70,10 @@ import Logo from "../assets/logo.svg?raw";
             type="button"
             class="text-gray-700 -m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
             aria-expanded="false"
+            id="mobile-menu-button"
           >
             <span class="sr-only">Open main menu</span>
-            <svg
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-            </svg>
+            <Icon name="material-symbols:menu-rounded" class="w-6 h-6 block" />
           </button>
         </div>
 
@@ -121,13 +123,175 @@ import Logo from "../assets/logo.svg?raw";
         <!-- CTA button -->
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
           <a
-            href="#"
-            class="relative rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-primary-light"
+            href="/contact"
+            class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-black text-white hover:bg-primary-light group transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
           >
-            Get Help ?
+            Get Help
+            <Icon
+              name="material-symbols:arrow-forward"
+              class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
+            />
           </a>
         </div>
       </div>
     </div>
+
+    <!-- Mobile menu panel -->
+    <div
+      class="lg:hidden fixed top-0 right-0 bottom-0 w-[280px] bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col"
+      id="mobile-menu"
+      role="dialog"
+      aria-modal="true"
+    >
+      <!-- Close button for drawer -->
+      <div class="flex justify-end p-4">
+        <button
+          type="button"
+          class="text-gray-700 rounded-md p-2 hover:bg-gray-100"
+          id="mobile-menu-close-button"
+        >
+          <Icon name="material-symbols:close" class="w-6 h-6" />
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="px-6 py-2 divide-y divide-neutral-100">
+        <div class="flex flex-col gap-y-4">
+          <a
+            href="/"
+            class="group text-base font-semibold leading-6 text-gray-900 hover:text-primary-light transition-colors duration-200"
+          >
+            Home
+          </a>
+          <a
+            href="/about"
+            class="group text-base font-semibold leading-6 text-gray-900 hover:text-primary-light transition-colors duration-200"
+          >
+            About
+          </a>
+          <a
+            href="/services"
+            class="group text-base font-semibold leading-6 text-gray-900 hover:text-primary-light transition-colors duration-200"
+          >
+            Services
+          </a>
+          <a
+            href="/contact"
+            class="group text-base font-semibold leading-6 text-gray-900 hover:text-primary-light transition-colors duration-200"
+          >
+            Contact
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Info & Social - Added at bottom of drawer -->
+      <div class="mt-auto px-6 py-8 border-t border-neutral-100">
+        <!-- Address -->
+        <div class="mb-6 text-sm text-gray-600">
+          <p class="font-semibold text-gray-900 mb-2">Visit Us</p>
+          <a href="#" id="maps-link" class="hover:text-primary-light">
+            12183 Highway 182 W<br />
+            Starkville, MS 39759
+          </a>
+        </div>
+
+        <!-- Contact -->
+        <div class="mb-6 text-sm text-gray-600">
+          <p class="font-semibold text-gray-900 mb-2">Contact</p>
+          <div class="flex flex-col gap-y-1">
+            <a href="tel:+16622687100" class="hover:text-primary-light">
+              +1 (662) 268-7100
+            </a>
+            <a
+              href="mailto:info@stateofmindpsychiatric.com"
+              class="hover:text-primary-light"
+            >
+              info@stateofmindpsychiatric.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div
+          class="flex gap-x-4 justify-center border-t border-neutral-300 pt-4"
+        >
+          <a
+            href="#"
+            class="text-gray-600 hover:text-primary-light transition-colors"
+            aria-label="Facebook"
+          >
+            <Icon name="mdi:facebook" class="w-5 h-5" />
+          </a>
+          <a
+            href="#"
+            class="text-gray-600 hover:text-primary-light transition-colors"
+            aria-label="Instagram"
+          >
+            <Icon name="mdi:instagram" class="w-5 h-5" />
+          </a>
+          <a
+            href="#"
+            class="text-gray-600 hover:text-primary-light transition-colors"
+            aria-label="LinkedIn"
+          >
+            <Icon name="mdi:linkedin" class="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlay -->
+    <div
+      id="mobile-menu-overlay"
+      class="lg:hidden fixed inset-0 bg-black bg-opacity-50 opacity-0 pointer-events-none transition-opacity duration-300 z-40"
+      onclick="toggleMenu()"
+    >
+    </div>
   </nav>
 </header>
+
+<script>
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const overlay = document.getElementById("mobile-menu-overlay");
+  const closeButton = document.getElementById("mobile-menu-close-button");
+
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+      mobileMenu?.classList.remove("translate-x-full");
+      overlay?.classList.remove("opacity-0", "pointer-events-none");
+    } else {
+      document.body.style.overflow = "";
+      mobileMenu?.classList.add("translate-x-full");
+      overlay?.classList.add("opacity-0", "pointer-events-none");
+    }
+  }
+
+  // Add click handlers
+  mobileMenuButton?.addEventListener("click", toggleMenu);
+  overlay?.addEventListener("click", toggleMenu);
+  closeButton?.addEventListener("click", toggleMenu);
+
+  // Smart maps link handler
+  const mapsLink = document.getElementById("maps-link") as HTMLAnchorElement;
+  const address = "12183 Highway 182 W, Starkville, MS 39759";
+  const encodedAddress = encodeURIComponent(address);
+
+  // Detect iOS
+  const isIOS =
+    /iPad|iPhone|iPod|Mac/.test(navigator.userAgent) &&
+    navigator.maxTouchPoints > 1;
+
+  if (mapsLink) {
+    if (isIOS) {
+      mapsLink.href = `maps://?address=${encodedAddress}`;
+    } else {
+      mapsLink.href = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+    }
+  }
+</script>

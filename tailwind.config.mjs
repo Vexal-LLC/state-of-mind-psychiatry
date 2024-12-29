@@ -5,18 +5,36 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#003B29", // Dark green
-          light: "#2A5B52", // Lighter green variant
+          DEFAULT: "#013B29", // Green
+          light: "#3C7F65", // Lighter green variant
+          dark: "#002619", // Darker green variant
         },
         secondary: {
           DEFAULT: "#966145", // Warm brown
           light: "#C28F7C", // Lighter brown variant
+          dark: "#663D29", // Darker brown variant
         },
         accent: {
-          yellow: "#FED152", // Darkened yellow
-          green: "#7DA06D", // Darkened green
-          purple: "#9A64C7", // Darkened purple
-          orange: "#E66E32", // Darkened orange
+          yellow: {
+            DEFAULT: "#FED152", // Yellow
+            light: "#FFE066", // Lightened yellow
+            dark: "#D1B34D", // Darkened yellow
+          },
+          green: {
+            DEFAULT: "#A0DE6F", // Green
+            light: "#B5E68C", // Lightened green
+            dark: "#74B857", // Darkened green
+          },
+          purple: {
+            DEFAULT: "#9A64C7", // Purple
+            light: "#C797E8", // Lightened purple
+            dark: "#6B479A", // Darkened purple
+          },
+          orange: {
+            DEFAULT: "#FF844B", // Orange
+            light: "#FFA778", // Lightened orange
+            dark: "#C75A31", // Darkened orange
+          },
         },
         neutral: {
           100: "#FFFFFF",

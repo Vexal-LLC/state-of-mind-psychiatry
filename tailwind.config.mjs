@@ -13,7 +13,7 @@ export default {
           light: "#C28F7C", // Lighter brown variant
         },
         accent: {
-          yellow: "#D4B32E", // Darkened yellow
+          yellow: "#FED152", // Darkened yellow
           green: "#7DA06D", // Darkened green
           purple: "#9A64C7", // Darkened purple
           orange: "#E66E32", // Darkened orange

@@ -81,6 +81,9 @@ importers:
       '@iconify-json/material-symbols':
         specifier: ^1.2.12
         version: 1.2.12
+      '@iconify-json/mdi':
+        specifier: ^1.2.2
+        version: 1.2.2
       '@types/node':
         specifier: ^22.10.2
         version: 22.10.2
@@ -576,6 +579,9 @@ packages:
 
   '@iconify-json/material-symbols@1.2.12':
     resolution: {integrity: sha512-2p2T13Kccy7R2HNbdiVsIcHxjp4s9a+iKlfbtt29hldG1pVNaPIlMALNA9bjdEwPjwsVFe06INCbjCRc68JysQ==}
+
+  '@iconify-json/mdi@1.2.2':
+    resolution: {integrity: sha512-84aznJXzfGdbOXGe8xB7E5uNAb7Yo5IABwTgq2X3kczb819qZeS9eL31bTVn7wJdCLK5ieaoUc2GTS3QYIkJ6g==}
 
   '@iconify/tools@4.1.1':
     resolution: {integrity: sha512-Hybu/HGhv6T8nLQhiG9rKx+ekF7NNpPOEQAy7JRSKht3s3dcFSsPccYzk24Znc9MTxrR6Gak3cg6CPP5dyvS2Q==}
@@ -3748,6 +3754,10 @@ snapshots:
   '@fontsource/sora@5.1.0': {}
 
   '@iconify-json/material-symbols@1.2.12':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/mdi@1.2.2':
     dependencies:
       '@iconify/types': 2.0.0
 

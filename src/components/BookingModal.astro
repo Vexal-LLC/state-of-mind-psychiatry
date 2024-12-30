@@ -1,0 +1,119 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  id?: string;
+  intakeqId: string;
+}
+
+const { id = "booking-modal", intakeqId } = Astro.props;
+---
+
+<div
+  id={id}
+  class="fixed inset-0 z-[100] hidden"
+  aria-labelledby="modal-title"
+  role="dialog"
+  aria-modal="true"
+  onclick="if (event.target === this) closeModal()"
+>
+  <!-- Backdrop -->
+  <div
+    id="modal-backdrop"
+    class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+  >
+  </div>
+
+  <!-- Modal panel -->
+  <div class="fixed inset-0 z-10 overflow-y-auto">
+    <div
+      class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+    >
+      <div
+        class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:p-6"
+        onclick="event.stopPropagation()"
+      >
+        <!-- Close button -->
+        <button
+          type="button"
+          class="absolute right-0 top-0 text-black hover:text-gray-500 focus:outline-none p-2"
+          onclick="closeModal()"
+        >
+          <span class="sr-only">Close</span>
+          <Icon name="material-symbols:close" class="w-6 h-6" />
+        </button>
+
+        <!-- IntakeQ Booking Widget -->
+        <div class="text-center mb-4">
+          <h2 class="text-xl font-semibold text-gray-900">
+            Schedule an Appointment
+          </h2>
+          <a
+            href={`https://intakeq.com/booking/${intakeqId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm font-normal text-blue-500 hover:text-blue-600 hover:underline mt-0 inline-block"
+          >
+            Open in IntakeQ
+          </a>
+        </div>
+
+        <!-- IntakeQ iframe will be injected here -->
+        <div
+          id="intakeq"
+          class="w-full max-w-[720px] mx-auto min-h-[500px] relative"
+        >
+        </div>
+        <p class="text-sm text-center text-gray-500 mt-1">Powered by IntakeQ</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ intakeqId }}>
+  /**
+   * @typedef {Object} CustomWindow
+   * @property {string} intakeq
+   * @property {(modalId?: string) => void} openModal
+   * @property {(modalId?: string) => void} closeModal
+   */
+  /** @type {CustomWindow & Window} */
+  const customWindow = window;
+
+  (function (c) {
+    customWindow.intakeq = intakeqId;
+
+    var i = c.createElement("script");
+    i.type = "text/javascript";
+    i.async = true;
+    i.src = "https://intakeq.com/js/widget.min.js?1";
+    document.head.appendChild(i);
+  })(document);
+
+  // Modal functions
+  window.openModal = function (modalId = "booking-modal") {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+
+      // Remove existing iframe
+      const intakeqDiv = document.getElementById("intakeq");
+      intakeqDiv.innerHTML = "";
+
+      // Reinitialize IntakeQ widget
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://intakeq.com/js/widget.min.js?1";
+      document.head.appendChild(script);
+    }
+  };
+
+  window.closeModal = function (modalId = "booking-modal") {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.add("hidden");
+      document.body.style.overflow = "auto";
+    }
+  };
+</script>

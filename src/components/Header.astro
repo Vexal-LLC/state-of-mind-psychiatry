@@ -3,7 +3,7 @@ import { Icon } from "astro-icon/components";
 ---
 
 <!-- Top Banner -->
-<div class="bg-primary text-neutral-300 font-light">
+<div class="bg-primary text-neutral-300 font-normal font-sans">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div
       class="hidden md:flex flex-col sm:flex-row items-center justify-between h-auto sm:h-10 text-sm gap-y-2 sm:gap-y-0"
@@ -21,7 +21,7 @@ import { Icon } from "astro-icon/components";
         <!-- Email -->
         <a
           href="mailto:info@stateofmindpsychiatric.com"
-          class="flex items-center gap-1 hover:text-neutral-100"
+          class='hover:text-neutral-100"'
         >
           info@stateofmindpsychiatric.com
         </a>
@@ -30,10 +30,7 @@ import { Icon } from "astro-icon/components";
         <div class="hidden sm:block h-6 w-px bg-neutral-100"></div>
 
         <!-- Phone -->
-        <a
-          href="tel:+16622687100"
-          class="flex items-center gap-1 hover:text-neutral-100"
-        >
+        <a href="tel:+16622687100" class="hover:text-neutral-100">
           +1 (662) 268-7100
         </a>
       </div>
@@ -73,10 +70,7 @@ import { Icon } from "astro-icon/components";
 
         <!-- Desktop navigation -->
         <div class="hidden lg:flex lg:gap-x-12">
-          <a
-            href="/"
-            class="group text-sm font-semibold leading-6 text-primary"
-          >
+          <a href="/" class="group text-md font-medium leading-6 text-primary">
             <p class="duration-[200ms] ease-in-out transition-all">Home</p>
             <span
               class="block h-[3px] bg-accent-orange transition-all duration-[200ms] ease-in-out scale-x-0 group-hover:scale-x-100"
@@ -84,7 +78,7 @@ import { Icon } from "astro-icon/components";
           </a>
           <a
             href="/about"
-            class="group text-sm font-semibold leading-6 text-gray-900"
+            class="group text-md font-medium leading-6 text-gray-900"
           >
             <p class="duration-[200ms] ease-in-out transition-all">About</p>
             <span
@@ -93,7 +87,7 @@ import { Icon } from "astro-icon/components";
           </a>
           <a
             href="/services"
-            class="group text-sm font-semibold leading-6 text-gray-900"
+            class="group text-md font-medium leading-6 text-gray-900"
           >
             <p class="duration-[200ms] ease-in-out transition-all">Services</p>
             <span
@@ -102,7 +96,7 @@ import { Icon } from "astro-icon/components";
           </a>
           <a
             href="/contact"
-            class="group text-sm font-semibold leading-6 text-gray-900"
+            class="group text-md font-medium leading-6 text-gray-900"
           >
             <p class="duration-[200ms] ease-in-out transition-all">Contact</p>
             <span
@@ -116,8 +110,8 @@ import { Icon } from "astro-icon/components";
 
         <!-- CTA button -->
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
-            href="/contact"
+          <button
+            onclick="openModal()"
             class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-black text-white hover:bg-primary-light group transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
           >
             Get Help
@@ -125,7 +119,7 @@ import { Icon } from "astro-icon/components";
               name="material-symbols:arrow-forward"
               class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
             />
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -153,25 +147,25 @@ import { Icon } from "astro-icon/components";
         <div class="flex flex-col gap-y-4">
           <a
             href="/"
-            class="group text-base font-semibold leading-6 text-gray-900 hover:text-primary-light transition-colors duration-200"
+            class="group text-base font-medium leading-6 text-gray-900 hover:text-primary-light transition-colors duration-200"
           >
             Home
           </a>
           <a
             href="/about"
-            class="group text-base font-semibold leading-6 text-gray-900 hover:text-primary-light transition-colors duration-200"
+            class="group text-base font-medium leading-6 text-gray-900 hover:text-primary-light transition-colors duration-200"
           >
             About
           </a>
           <a
             href="/services"
-            class="group text-base font-semibold leading-6 text-gray-900 hover:text-primary-light transition-colors duration-200"
+            class="group text-base font-medium leading-6 text-gray-900 hover:text-primary-light transition-colors duration-200"
           >
             Services
           </a>
           <a
             href="/contact"
-            class="group text-base font-semibold leading-6 text-gray-900 hover:text-primary-light transition-colors duration-200"
+            class="group text-base font-medium leading-6 text-gray-900 hover:text-primary-light transition-colors duration-200"
           >
             Contact
           </a>
@@ -181,8 +175,8 @@ import { Icon } from "astro-icon/components";
       <!-- Contact Info & Social - Added at bottom of drawer -->
       <div class="mt-auto px-6 py-8 border-t border-neutral-100">
         <!-- Address -->
-        <div class="mb-6 text-sm text-gray-600">
-          <p class="font-semibold text-gray-900 mb-2">Visit Us</p>
+        <div class="mb-6 text-md text-gray-600">
+          <p class="font-medium text-gray-900 mb-2">Visit Us</p>
           <a href="#" id="maps-link" class="hover:text-primary-light">
             12183 Highway 182 W<br />
             Starkville, MS 39759
@@ -190,8 +184,8 @@ import { Icon } from "astro-icon/components";
         </div>
 
         <!-- Contact -->
-        <div class="mb-6 text-sm text-gray-600">
-          <p class="font-semibold text-gray-900 mb-2">Contact</p>
+        <div class="mb-6 text-md text-gray-600">
+          <p class="font-medium text-gray-900 mb-2">Contact</p>
           <div class="flex flex-col gap-y-1">
             <a href="tel:+16622687100" class="hover:text-primary-light">
               +1 (662) 268-7100

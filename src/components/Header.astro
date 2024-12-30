@@ -10,7 +10,7 @@ import { Icon } from "astro-icon/components";
     >
       <div class="hidden sm:block">
         <!-- Address -->
-        <a href="#" id="maps-link">
+        <a href="#" id="maps-link-desktop">
           12183 Highway 182 W Starkville, MS 39759
         </a>
       </div>
@@ -172,7 +172,7 @@ import { Icon } from "astro-icon/components";
         <!-- Address -->
         <div class="mb-6 text-md text-gray-600">
           <p class="font-medium text-gray-900 mb-2">Visit Us</p>
-          <a href="#" id="maps-link" class="hover:text-primary-light">
+          <a href="#" id="maps-link-mobile" class="hover:text-primary-light">
             12183 Highway 182 W<br />
             Starkville, MS 39759
           </a>
@@ -261,7 +261,12 @@ import { Icon } from "astro-icon/components";
   closeButton?.addEventListener("click", toggleMenu);
 
   // Smart maps link handler
-  const mapsLink = document.getElementById("maps-link") as HTMLAnchorElement;
+  const mapsLinkDesktop = document.getElementById(
+    "maps-link-desktop"
+  ) as HTMLAnchorElement;
+  const mapsLinkMobile = document.getElementById(
+    "maps-link-mobile"
+  ) as HTMLAnchorElement;
   const address = "12183 Highway 182 W, Starkville, MS 39759";
   const encodedAddress = encodeURIComponent(address);
 
@@ -270,11 +275,19 @@ import { Icon } from "astro-icon/components";
     /iPad|iPhone|iPod|Mac/.test(navigator.userAgent) &&
     navigator.maxTouchPoints > 1;
 
-  if (mapsLink) {
+  if (mapsLinkDesktop) {
     if (isIOS) {
-      mapsLink.href = `maps://?address=${encodedAddress}`;
+      mapsLinkDesktop.href = `maps://?address=${encodedAddress}`;
     } else {
-      mapsLink.href = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+      mapsLinkDesktop.href = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+    }
+  }
+
+  if (mapsLinkMobile) {
+    if (isIOS) {
+      mapsLinkMobile.href = `maps://?address=${encodedAddress}`;
+    } else {
+      mapsLinkMobile.href = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
     }
   }
 </script>

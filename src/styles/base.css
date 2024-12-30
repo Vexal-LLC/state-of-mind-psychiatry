@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @import "@fontsource/inter";
-  @import "@fontsource/vollkorn";
-}
-
 body {
   font-family: "Inter", sans-serif;
 }

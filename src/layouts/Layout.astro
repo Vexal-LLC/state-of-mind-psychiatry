@@ -53,6 +53,7 @@ const { title } = Astro.props;
             : "State of Mind Psychiatry, LLC",
           type: "website",
           image: "/og-image.png",
+          url: "https://stateofmindpsychiatry.com",
         },
       }}
       twitter={{
@@ -60,12 +61,12 @@ const { title } = Astro.props;
       }}
       extend={{
         // extending the default link tags
-        link: [{ rel: "icon", href: "/favicon.ico" }],
+        link: [{ rel: "icon", href: "/favicon.svg" }],
         // extending the default meta tags
         meta: [
           {
             name: "twitter:image",
-            content: "/og-image.png",
+            content: "../assets/brain-puzzle.svg",
           },
           {
             name: "twitter:title",

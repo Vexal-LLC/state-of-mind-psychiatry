@@ -10,7 +10,14 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind(), mdx(), icon()],
+  integrations: [
+    react(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    mdx(),
+    icon(),
+  ],
 
   adapter: vercel(),
 });

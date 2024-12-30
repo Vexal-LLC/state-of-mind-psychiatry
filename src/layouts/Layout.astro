@@ -1,16 +1,5 @@
 ---
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/500.css";
-import "@fontsource/inter/600.css";
-import "@fontsource/inter/700.css";
-import "@fontsource/inter/800.css";
-import "@fontsource/inter/900.css";
-import "@fontsource/vollkorn/400.css";
-import "@fontsource/vollkorn/500.css";
-import "@fontsource/vollkorn/600.css";
-import "@fontsource/vollkorn/700.css";
-import "@fontsource/vollkorn/800.css";
-import "@fontsource/vollkorn/900.css";
+import "~/styles/base.css";
 import { SEO } from "astro-seo";
 
 import Header from "~/components/Header.astro";
@@ -33,6 +22,8 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.svg" />
 
     <!-- Add preload links before SEO component -->
     <link
@@ -89,7 +80,7 @@ const { title } = Astro.props;
       }}
     />
   </head>
-  <body class="font-sans bg-neutral-200">
+  <body class="font-sans bg-neutral-200 min-h-screen">
     <BookingModal intakeqId="67210cd9466898d6e239ad00" />
     <Header />
     <slot />

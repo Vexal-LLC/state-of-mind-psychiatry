@@ -3,7 +3,12 @@ import { Icon } from "astro-icon/components";
 ---
 
 <!-- Top Banner -->
-<div class="bg-primary text-neutral-300 font-normal font-sans">
+<div
+  class="bg-primary text-neutral-300 font-normal font-sans"
+  aria-hidden="false"
+  aria-label="Top banner"
+  role="banner"
+>
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div
       class="hidden lg:flex flex-col sm:flex-row items-center justify-between h-auto sm:h-10 text-sm gap-y-2 sm:gap-y-0"
@@ -35,6 +40,9 @@ import { Icon } from "astro-icon/components";
 
 <header
   class="relative z-50 bg-white max-w-7xl xl:mx-auto xl:rounded-xl xl:rounded-t-none shadow-sm"
+  aria-hidden="false"
+  aria-label="Header"
+  role="navigation"
 >
   <!-- Main Navigation -->
   <nav class="mx-auto max- px-6 lg:px-8" aria-label="Main navigation">

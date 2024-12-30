@@ -57,14 +57,14 @@ const { title } = Astro.props;
       title={title
         ? `${title} | State of Mind Psychiatry, LLC`
         : "State of Mind Psychiatry, LLC"}
-      description="State of Mind Psychiatry, LLC is a psychiatry practice in Starkville, Mississippi that provides comprehensive mental health care to adults and adolescents."
+      description="State of Mind Psychiatry, LLC is a psychiatry practice in Starkville, Mississippi that provides expert outpatient mental health care that adapts to your unique journey. Providing compassionate care for adults and adolescents and helping you build a stronger, more resilient future and State of Mind."
       openGraph={{
         basic: {
           title: title
             ? `${title} | State of Mind Psychiatry, LLC`
             : "State of Mind Psychiatry, LLC",
           type: "website",
-          image: "/og-image.png",
+          image: "/assets/brain-puzzle.svg",
           url: "https://stateofmindpsychiatry.com",
         },
       }}
@@ -78,16 +78,18 @@ const { title } = Astro.props;
         meta: [
           {
             name: "twitter:image",
-            content: "../assets/brain-puzzle.svg",
+            content: "/assets/brain-puzzle.svg",
           },
           {
             name: "twitter:title",
-            content: `${title} | State of Mind Psychiatry, LLC`,
+            content: title
+              ? `${title} | State of Mind Psychiatry, LLC`
+              : "State of Mind Psychiatry, LLC",
           },
           {
             name: "twitter:description",
             content:
-              "State of Mind Psychiatry, LLC is a psychiatry practice in Starkville, Mississippi that provides comprehensive mental health care to adults and adolescents.",
+              "State of Mind Psychiatry, LLC is a psychiatry practice in Starkville, Mississippi that provides expert outpatient mental health care that adapts to your unique journey. Providing compassionate care for adults and adolescents and helping you build a stronger, more resilient future and State of Mind.",
           },
         ],
       }}

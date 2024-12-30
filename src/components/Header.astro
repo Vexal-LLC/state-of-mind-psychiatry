@@ -289,7 +289,7 @@ import { Icon } from "astro-icon/components";
     if (isIOS) {
       mapsLinkDesktop.href = `maps://?address=${encodedAddress}`;
     } else {
-      mapsLinkDesktop.href = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+      mapsLinkDesktop.href = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}&loading=async`;
     }
   }
 
@@ -297,7 +297,7 @@ import { Icon } from "astro-icon/components";
     if (isIOS) {
       mapsLinkMobile.href = `maps://?address=${encodedAddress}`;
     } else {
-      mapsLinkMobile.href = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+      mapsLinkMobile.href = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}&loading=async`;
     }
   }
 </script>

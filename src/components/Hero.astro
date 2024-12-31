@@ -84,14 +84,14 @@ import brainPuzzle from "../assets/brain-puzzle.svg";
           </div>
         </div>
 
-        <!-- Right side image with enhanced styling -->
-        <div class="hidden lg:block mt-14 lg:mt-0">
+        <!-- Right side image - Modified for small screens -->
+        <div class="mt-8 lg:mt-0">
           <Image
             src={brainPuzzle}
             loading="lazy"
             decoding="async"
             alt="Mind illustration"
-            class="relative aspect-[3/4] w-full rounded-xl object-cover"
+            class="relative aspect-[3/4] w-full max-w-md mx-auto rounded-xl object-cover"
           />
         </div>
       </div>

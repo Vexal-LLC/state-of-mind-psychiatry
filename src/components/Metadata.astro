@@ -1,0 +1,37 @@
+---
+import { SEO } from "astro-seo";
+
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  canonicalUrl: string;
+  type: "website";
+}
+
+const { title, description, image, canonicalUrl, type } = Astro.props;
+---
+
+<SEO
+  title={title}
+  description={description}
+  canonical={canonicalUrl}
+  openGraph={{
+    basic: {
+      title,
+      type,
+      image,
+      url: canonicalUrl,
+    },
+    image: {
+      url: image,
+      type: "image/jpeg",
+    },
+  }}
+  twitter={{
+    card: "summary_large_image",
+    title,
+    description,
+    image,
+  }}
+/>

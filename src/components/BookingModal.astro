@@ -28,10 +28,11 @@ const { id = "booking-modal", intakeqId } = Astro.props;
   <div class="fixed inset-0 z-10 overflow-y-auto">
     <div
       class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+      onclick="closeModal()"
     >
       <div
         class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:p-6"
-        onclick="event.stopPropagation()"
+        onclick="(e) => e.stopPropagation()"
       >
         <!-- Close button -->
         <button
@@ -45,7 +46,7 @@ const { id = "booking-modal", intakeqId } = Astro.props;
 
         <!-- IntakeQ Booking Widget -->
         <div class="text-center mb-4">
-          <h2 class="text-xl font-semibold text-gray-900">
+          <h2 class="text-xl font-sans font-semibold text-gray-900">
             Schedule an Appointment
           </h2>
           <a

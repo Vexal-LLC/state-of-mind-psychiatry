@@ -12,8 +12,8 @@ import "@fontsource/vollkorn/700.css";
 import "@fontsource/vollkorn/800.css";
 import "@fontsource/vollkorn/900.css";
 import "~/styles/base.css";
-import { SEO } from "astro-seo";
 
+import Metadata from "~/components/Metadata.astro";
 import Header from "~/components/Header.astro";
 import Footer from "~/components/Footer.astro";
 import BookingModal from "~/components/BookingModal.astro";
@@ -27,6 +27,11 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+// Get the current pathname from Astro.url
+const pathname = new URL(Astro.url).pathname;
+// Convert pathname to OG image slug
+const ogSlug = pathname === "/" ? "home" : pathname.slice(1).replace(/\/$/, "");
 ---
 
 <!doctype html>
@@ -35,7 +40,7 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <!-- Favicon -->
-    <link rel="icon" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.png" />
 
     <!-- Add preload links before SEO component -->
     <link
@@ -53,46 +58,14 @@ const { title } = Astro.props;
       crossorigin="anonymous"
     />
 
-    <SEO
+    <Metadata
       title={title
         ? `${title} | State of Mind Psychiatry, LLC`
         : "State of Mind Psychiatry, LLC"}
       description="State of Mind Psychiatry, LLC is a psychiatry practice in Starkville, Mississippi that provides expert outpatient mental health care that adapts to your unique journey. Providing compassionate care for adults and adolescents and helping you build a stronger, more resilient future and State of Mind."
-      openGraph={{
-        basic: {
-          title: title
-            ? `${title} | State of Mind Psychiatry, LLC`
-            : "State of Mind Psychiatry, LLC",
-          type: "website",
-          image: "/assets/brain-puzzle.svg",
-          url: "https://stateofmindpsychiatry.com",
-        },
-      }}
-      twitter={{
-        creator: "@stateofmindpsychiatry",
-      }}
-      extend={{
-        // extending the default link tags
-        link: [{ rel: "icon", href: "/favicon.svg" }],
-        // extending the default meta tags
-        meta: [
-          {
-            name: "twitter:image",
-            content: "/assets/brain-puzzle.svg",
-          },
-          {
-            name: "twitter:title",
-            content: title
-              ? `${title} | State of Mind Psychiatry, LLC`
-              : "State of Mind Psychiatry, LLC",
-          },
-          {
-            name: "twitter:description",
-            content:
-              "State of Mind Psychiatry, LLC is a psychiatry practice in Starkville, Mississippi that provides expert outpatient mental health care that adapts to your unique journey. Providing compassionate care for adults and adolescents and helping you build a stronger, more resilient future and State of Mind.",
-          },
-        ],
-      }}
+      image={`/api/og/${ogSlug}.png`}
+      canonicalUrl="https://stateofmindpsychiatric.com"
+      type="website"
     />
   </head>
   <body class="font-sans bg-neutral-200 min-h-screen">

@@ -23,6 +23,10 @@ const { title, description, image, canonicalUrl, type } = Astro.props;
       image,
       url: canonicalUrl,
     },
+    optional: {
+      siteName: "State of Mind Psychiatry",
+      description: description,
+    },
     image: {
       url: image,
       type: "image/jpeg",

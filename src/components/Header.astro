@@ -75,7 +75,7 @@ import { Icon } from "astro-icon/components";
 
         <!-- Desktop navigation -->
         <div class="hidden lg:flex lg:gap-x-12">
-          <a href="/" class="group text-md font-medium leading-6 text-primary">
+          <a href="/" class="group text-md font-medium leading-6 text-gray-900">
             <p class="duration-[200ms] ease-in-out transition-all">Home</p>
             <span
               class="block h-[3px] bg-accent-orange transition-all duration-[200ms] ease-in-out scale-x-0 group-hover:scale-x-100"
@@ -152,25 +152,25 @@ import { Icon } from "astro-icon/components";
         <div class="flex flex-col gap-y-4">
           <a
             href="/"
-            class="group text-base font-medium leading-6 text-gray-900 hover:text-primary-light transition-colors duration-200"
+            class="group text-base font-medium leading-6 text-gray-900"
           >
             Home
           </a>
           <a
             href="/about"
-            class="group text-base font-medium leading-6 text-gray-900 hover:text-primary-light transition-colors duration-200"
+            class="group text-base font-medium leading-6 text-gray-900"
           >
             About
           </a>
           <a
             href="/services"
-            class="group text-base font-medium leading-6 text-gray-900 hover:text-primary-light transition-colors duration-200"
+            class="group text-base font-medium leading-6 text-gray-900"
           >
             Services
           </a>
           <a
             href="/contact"
-            class="group text-base font-medium leading-6 text-gray-900 hover:text-primary-light transition-colors duration-200"
+            class="group text-base font-medium leading-6 text-gray-900"
           >
             Contact
           </a>
@@ -182,7 +182,7 @@ import { Icon } from "astro-icon/components";
         <!-- Address -->
         <div class="mb-6 text-md text-gray-600">
           <p class="font-medium text-gray-900 mb-2">Visit Us</p>
-          <a href="#" id="maps-link-mobile" class="hover:text-primary-light">
+          <a href="#" id="maps-link-mobile" class="text-gray-900">
             12183 Highway 182 W<br />
             Starkville, MS 39759
           </a>
@@ -192,12 +192,12 @@ import { Icon } from "astro-icon/components";
         <div class="mb-6 text-md text-gray-600">
           <p class="font-medium text-gray-900 mb-2">Contact</p>
           <div class="flex flex-col gap-y-1">
-            <a href="tel:+16622687100" class="hover:text-primary-light">
+            <a href="tel:+16622687100" class="text-gray-900">
               +1 (662) 268-7100
             </a>
             <a
               href="mailto:info@stateofmindpsychiatric.com"
-              class="hover:text-primary-light"
+              class="text-gray-900"
             >
               info@stateofmindpsychiatric.com
             </a>
@@ -208,25 +208,13 @@ import { Icon } from "astro-icon/components";
         <div
           class="flex gap-x-4 justify-center border-t border-neutral-300 pt-4"
         >
-          <a
-            href="#"
-            class="text-gray-600 hover:text-primary-light transition-colors"
-            aria-label="Facebook"
-          >
+          <a href="#" class="text-gray-600" aria-label="Facebook">
             <Icon name="mdi:facebook" class="w-5 h-5" />
           </a>
-          <a
-            href="#"
-            class="text-gray-600 hover:text-primary-light transition-colors"
-            aria-label="Instagram"
-          >
+          <a href="#" class="text-gray-600" aria-label="Instagram">
             <Icon name="mdi:instagram" class="w-5 h-5" />
           </a>
-          <a
-            href="#"
-            class="text-gray-600 hover:text-primary-light transition-colors"
-            aria-label="LinkedIn"
-          >
+          <a href="#" class="text-gray-600" aria-label="LinkedIn">
             <Icon name="mdi:linkedin" class="w-5 h-5" />
           </a>
         </div>

@@ -57,16 +57,16 @@ import { Icon } from "astro-icon/components";
               Schedule your consultation with our experienced team
             </p>
           </div>
-          <a
-            href="/contact"
+          <button
             class="inline-flex items-center px-6 py-3 rounded-full font-semibold bg-accent-yellow text-black hover:bg-accent-yellow-light hover:text-black/80 group transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            onclick="openModal()"
           >
             Book Appointment
             <Icon
               name="material-symbols:arrow-forward"
               class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
             />
-          </a>
+          </button>
         </div>
       </div>
 
@@ -91,10 +91,21 @@ import { Icon } from "astro-icon/components";
         </div>
 
         <!-- Copyright -->
-        <p class="text-gray-400 text-sm text-center lg:text-left">
-          © {new Date().getFullYear()} State of Mind Psychiatry, LLC. All Rights
-          Reserved
-        </p>
+        <div class="text-gray-400 text-sm text-center space-y-1">
+          <p>
+            © {new Date().getFullYear()} State of Mind Psychiatry, LLC. All Rights
+            Reserved
+          </p>
+          <p class="pt-2">
+            Made with <Icon name="mdi:heart" class="w-4 h-4 inline" /> by
+            <a
+              href="https://links.justinsmith.sh"
+              class="hover:text-white transition-colors underline text-gray-300"
+              target="_blank"
+              rel="noopener noreferrer">Justin Smith</a
+            >
+          </p>
+        </div>
 
         <!-- Footer Links -->
         <div class="flex justify-center gap-6">

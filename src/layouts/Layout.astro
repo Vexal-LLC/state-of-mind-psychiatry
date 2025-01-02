@@ -19,8 +19,10 @@ import Footer from "~/components/Footer.astro";
 import BookingModal from "~/components/BookingModal.astro";
 
 // Import font files for preloading
-import interLatinWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
-import vollkornLatinWoff2 from "@fontsource-variable/vollkorn/files/vollkorn-latin-wght-normal.woff2?url";
+import interLatinNormalWoff2 from "@fontsource/inter/files/inter-latin-400-normal.woff2?url";
+import interLatinMediumWoff2 from "@fontsource/inter/files/inter-latin-500-normal.woff2?url";
+import vollkornLatinBoldWoff2 from "@fontsource/vollkorn/files/vollkorn-latin-700-normal.woff2?url";
+import brainPuzzle from "~/assets/brain-puzzle.svg";
 
 interface Props {
   title?: string;
@@ -45,16 +47,31 @@ const ogSlug = pathname === "/" ? "home" : pathname.slice(1).replace(/\/$/, "");
     <!-- Add preload links before SEO component -->
     <link
       rel="preload"
-      href={vollkornLatinWoff2}
+      href={vollkornLatinBoldWoff2}
       as="font"
       type="font/woff2"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
-      href={interLatinWoff2}
+      href={interLatinMediumWoff2}
       as="font"
       type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href={interLatinNormalWoff2}
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <!-- preload hero image -->
+    <link
+      rel="preload"
+      href={brainPuzzle.src}
+      as="image"
+      type="image/svg+xml"
       crossorigin="anonymous"
     />
 

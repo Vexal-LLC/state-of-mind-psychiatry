@@ -1,10 +1,12 @@
 ---
-import Hero from "../components/Hero.astro";
-import Layout from "../layouts/Layout.astro";
+import Layout from "~/layouts/Layout.astro";
+import Hero from "~/sections/Hero.astro";
+import Services from "~/sections/Services.astro";
 ---
 
 <Layout>
   <main aria-hidden="false" aria-label="Main content" role="main">
     <Hero />
+    <Services />
   </main>
 </Layout>

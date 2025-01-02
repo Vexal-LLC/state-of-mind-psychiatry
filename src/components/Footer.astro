@@ -45,10 +45,10 @@ import { Icon } from "astro-icon/components";
           <div class="text-center lg:text-left">
             <h2 class="text-white text-2xl lg:text-3xl font-serif mb-2">
               Start
-              <span class="text-accent-yellow-light relative">
+              <span class="text-accent-yellow-dark relative">
                 Your Journey
                 <span
-                  class="absolute -bottom-1 left-0 h-1 w-full bg-accent-yellow/20"
+                  class="absolute bottom-0 left-0 h-1 w-full bg-accent-yellow-dark/20"
                 ></span>
               </span>
               <span class="relative"> Today</span>
@@ -58,13 +58,13 @@ import { Icon } from "astro-icon/components";
             </p>
           </div>
           <button
-            class="inline-flex items-center px-6 py-3 rounded-full font-semibold bg-accent-yellow text-black hover:bg-accent-yellow-light hover:text-black/80 group transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            class="inline-flex items-center px-6 py-3 rounded-full font-semibold bg-accent-yellow-dark text-black hover:bg-accent-yellow-dark/90 hover:text-black/80 group transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             onclick="openModal()"
           >
             Book Appointment
             <Icon
-              name="material-symbols:arrow-forward"
-              class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
+              name="mdi:arrow-right"
+              class="w-5 h-5 ml-1 transition-transform duration-300 group-hover:translate-x-1"
             />
           </button>
         </div>

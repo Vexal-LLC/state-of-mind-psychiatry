@@ -1,0 +1,78 @@
+---
+import Pill from "~/components/Pill.astro";
+
+const timelineSteps = [
+  {
+    number: "01",
+    title: "Initial Assessment",
+    description:
+      "A comprehensive evaluation to understand your needs and create a personalized treatment plan.",
+    bgColor: "bg-gradient-to-br from-neutral-300/80 to-neutral-300/90",
+  },
+  {
+    number: "02",
+    title: "Follow-Up Care",
+    description:
+      "Regular appointments to monitor your progress and adjust treatment as needed.",
+    bgColor:
+      "bg-gradient-to-br from-accent-green-light/80 to-accent-green-light/90",
+  },
+  {
+    number: "03",
+    title: "Ongoing Support",
+    description:
+      "Continuous care and guidance to help you maintain progress and achieve your wellness goals.",
+    bgColor:
+      "bg-gradient-to-br from-accent-yellow-light/80 to-accent-yellow-light/90",
+  },
+];
+---
+
+<section class="py-16 md:py-24 px-4 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <div class="mb-6 flex justify-center items-center">
+        <Pill variant="light" text="YOUR TREATMENT JOURNEY" />
+      </div>
+      <h2
+        class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold tracking-tight mb-4 text-gray-900"
+      >
+        How
+        <span
+          class="highlight-accent-yellow highlight-h-80 highlight-behind highlight-opacity-80 highlight-rounded-md relative z-[1] inline-block highlight-rotate-5"
+          >Treatment</span
+        >
+        Works
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Three simple steps to begin your journey toward better mental wellness
+      </p>
+    </div>
+
+    <!-- Timeline Steps -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {
+        timelineSteps.map((step) => (
+          <div
+            class={`rounded-3xl p-8 ${step.bgColor} transition-all duration-300 shadow-md hover:shadow-lg`}
+          >
+            <div class="flex flex-col h-full">
+              <div class="flex-1">
+                <div class="text-gray-900 mb-4 font-medium text-lg border-2 border-gray-900/60 rounded-full w-12 h-12 flex items-center justify-center">
+                  {step.number}
+                </div>
+                <h3 class="text-xl font-semibold mb-4 text-gray-900">
+                  {step.title}
+                </h3>
+                <p class="text-gray-600 font-medium leading-relaxed mb-6">
+                  {step.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

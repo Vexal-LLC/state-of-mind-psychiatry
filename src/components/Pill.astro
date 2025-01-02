@@ -1,0 +1,29 @@
+---
+interface Props {
+  text?: string;
+  variant?: "light" | "dark";
+  class?: string;
+}
+
+const { text, variant = "primary", class: className = "" } = Astro.props;
+
+const variants = {
+  light: "text-gray-600 ring-gray-600/50 hover:ring-gray-600 hover:shadow-md",
+  dark: "text-gray-300 ring-gray-300/50 hover:ring-gray-300 hover:shadow-md",
+};
+---
+
+<div
+  class:list={[
+    "group relative rounded-full px-3 py-1.5",
+    "font-sans text-sm font-medium leading-6",
+    "ring-1 tracking-tight",
+    "transition-all duration-300",
+    variants[variant],
+    className,
+  ]}
+>
+  <slot>
+    {text}
+  </slot>
+</div>

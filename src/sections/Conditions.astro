@@ -76,7 +76,7 @@ const services = [
         {services.map((_, index) => (
           <button
             class={`w-2 h-16 rounded-full bg-white/20 hover:bg-white/80 transition-all duration-300 ${
-              index === 0 ? "!bg-white/80" : ""
+              index === 0 ? "!bg-white/80 !h-8" : ""
             }`}
             data-index={index}
             style="min-width: 8px;"
@@ -123,7 +123,7 @@ const services = [
 
     <!-- Mobile carousel - adjust width and padding -->
     <div class="md:hidden w-full">
-      <div class="relative h-[500px]">
+      <div class="relative h-[500px] max-w-md mx-auto">
         <div class="swiper services-swiper-horizontal h-full">
           <div class="swiper-wrapper">
             {
@@ -161,7 +161,7 @@ const services = [
           {services.map((_, index) => (
             <button
               class={`w-8 h-2 rounded-full bg-white/20 hover:bg-white/80 transition-all duration-300 ${
-                index === 0 ? "!bg-white/80" : ""
+                index === 0 ? "!bg-white/80 !w-4" : ""
               }`}
               data-index={index}
             />
@@ -205,6 +205,7 @@ const services = [
     swiperVertical.on("slideChange", () => {
       verticalBullets.forEach((bullet, index) => {
         bullet.classList.toggle("!bg-white/80", index === swiperVertical.activeIndex);
+        bullet.classList.toggle("!h-8", index === swiperVertical.activeIndex);
       });
     });
 
@@ -238,6 +239,7 @@ const services = [
     swiperHorizontal.on("slideChange", () => {
       mobileHorizontalBullets.forEach((bullet, index) => {
         bullet.classList.toggle("!bg-white/80", index === swiperHorizontal.activeIndex);
+        bullet.classList.toggle("!w-4", index === swiperHorizontal.activeIndex);
       });
     });
   });

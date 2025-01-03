@@ -3,26 +3,40 @@ interface Props {
   text?: string;
   variant?: "light" | "dark";
   class?: string;
+  interactive?: boolean;
 }
 
-const { text, variant = "primary", class: className = "" } = Astro.props;
+const {
+  text,
+  variant = "light",
+  interactive = false,
+  class: className = "",
+} = Astro.props;
 
 const variants = {
-  light: "text-gray-600 ring-gray-600/50 hover:ring-gray-600 hover:shadow-md",
-  dark: "text-gray-300 ring-gray-300/50 hover:ring-gray-300 hover:shadow-md",
+  light: "text-gray-600/90 ring-gray-600/30",
+  dark: "text-gray-300/90 ring-gray-300/30",
 };
+
+const baseStyles = [
+  "rounded-full px-3 py-1.5",
+  "font-sans text-sm font-medium leading-6",
+  "ring-1 tracking-tight",
+  "transition-all duration-300",
+  variants[variant],
+];
+
+const interactiveStyles = interactive
+  ? [
+      "hover:ring-2",
+      "hover:shadow-md",
+      "cursor-pointer",
+      variant === "light" ? "hover:ring-gray-600" : "hover:ring-gray-300",
+    ]
+  : [];
 ---
 
-<div
-  class:list={[
-    "group relative rounded-full px-3 py-1.5",
-    "font-sans text-sm font-medium leading-6",
-    "ring-1 tracking-tight",
-    "transition-all duration-300",
-    variants[variant],
-    className,
-  ]}
->
+<div class:list={[...baseStyles, ...interactiveStyles, className]}>
   <slot>
     {text}
   </slot>

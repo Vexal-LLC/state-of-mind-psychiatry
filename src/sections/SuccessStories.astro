@@ -1,0 +1,328 @@
+---
+import { Icon } from 'astro-icon/components';
+import "swiper/css";
+import "swiper/css/pagination";
+import FullWidthContainer from "~/components/FullWidthContainer.astro";
+import Pill from "~/components/Pill.astro";
+
+const successStories = [
+  {
+    quote: "Finally broke the cycles that were keeping me stuck",
+    author: "Justin S.",
+    testimonial: "Receiving an ADHD diagnosis was shocking, but it was empowering. With the help of State of Mind Psychiatry, I regained control and made significant life changes.",
+    condition: "ADHD Treatment",
+  },
+  {
+    quote: "Finally broke the cycles that were keeping me stuck",
+    author: "Justin S.",
+    testimonial: "Receiving an ADHD diagnosis was shocking, but it was empowering. With the help of State of Mind Psychiatry, I regained control and made significant life changes.",
+    condition: "ADHD Treatment",
+  },
+];
+---
+
+<FullWidthContainer id="success-stories" class="bg-neutral-300 py-16 md:py-24">
+  <div
+    class="flex flex-col md:flex-row gap-12 items-center max-w-7xl mx-auto px-4 pb-8 md:py-0"
+  >
+    <!-- Left Content -->
+    <div class="space-y-6 md:w-1/2 lg:w-2/3">
+      <div class="mb-6 flex justify-start items-center">
+        <Pill variant="light" text="SUCCESS STORIES" />
+      </div>
+
+      <h2
+        class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight font-serif mb-4"
+      >
+        Real Stories of
+        <span
+          class="text-secondary-dark highlight-accent-orange highlight-h-20 highlight-behind highlight-opacity-90 highlight-rounded-md relative z-[1] inline-block"
+          >Recovery</span
+        >
+      </h2>
+
+      <p class="text-xl text-gray-600">
+        Discover how we've helped our patients achieve better mental health and
+        improved quality of life.
+      </p>
+    </div>
+
+    <!-- Desktop carousel -->
+    <div class="hidden md:flex gap-8 items-center md:w-1/2 lg:w-1/3 h-[400px]">
+      <!-- Vertical pagination -->
+      <div class="flex flex-col gap-4">
+        {
+          successStories.map((_, index) => (
+            <button
+              class={`pagination-bullet-vertical w-2 h-16 rounded-full transition-all duration-300 ${
+                index === 0 ? "active" : ""
+              }`}
+              data-index={index}
+              style="min-width: 8px; background-color: rgba(51, 51, 51, 0.2);"
+            />
+          ))
+        }
+      </div>
+
+      <!-- Vertical Swiper -->
+      <div class="relative overflow-hidden rounded-2xl w-full h-full">
+        <div class="swiper success-swiper-vertical h-full">
+          <div class="swiper-wrapper">
+            {
+              successStories.map((story) => (
+                <div class="swiper-slide h-full">
+                  <div class="bg-accent-brown-dark text-white rounded-3xl overflow-hidden shadow-xl h-full flex flex-col p-8 relative">
+                    <!-- Main quote -->
+                    <div class="mb-8">
+                      <div class="text-2xl md:text-3xl font-serif">
+                        <Icon 
+                          name="mdi:format-quote-open" 
+                          class="inline-block text-accent-orange w-8 h-8"
+                        />
+                        {story.quote}
+                        <Icon 
+                          name="mdi:format-quote-close" 
+                          class="inline-block text-accent-orange w-8 h-8"
+                        />
+                      </div>
+                    </div>
+                    
+                    <!-- Author info -->
+                    <div class="mt-auto">
+                      <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-accent-yellow-dark flex items-center justify-center">
+                          <Icon 
+                            name="mdi:account" 
+                            class="w-8 h-8 md:w-10 md:h-10 text-neutral-700"
+                          />
+                        </div>
+                        <div>
+                          <p class="font-semibold">{story.author}</p>
+                          <p class="text-sm text-white/80">{story.condition}</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Detailed testimonial -->
+                    <div class="mt-6 text-sm text-neutral-300 italic">
+                      {story.testimonial}
+                    </div>
+                    
+                    <!-- Decorative elements -->
+                    <Icon 
+                      name="mdi:leaf" 
+                      class="text-accent-orange/10 absolute right-0 top-1/2 -translate-y-1/2 w-3/4 h-3/4"
+                    />
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile carousel -->
+    <div class="md:hidden w-full">
+      <div class="relative h-[400px]">
+        <div class="swiper success-swiper-horizontal h-full">
+          <div class="swiper-wrapper">
+            {
+              successStories.map((story) => (
+                <div class="swiper-slide h-full">
+                  <div class="bg-accent-brown-dark text-white rounded-3xl overflow-hidden h-full flex flex-col p-8 relative">
+                    <!-- Main quote -->
+                    <div class="mb-8">
+                      <div class="text-2xl font-serif">
+                        <Icon 
+                          name="mdi:format-quote-open" 
+                          class="inline-block text-accent-orange w-8 h-8"
+                        />
+                        {story.quote}
+                        <Icon 
+                          name="mdi:format-quote-close" 
+                          class="inline-block text-accent-orange w-8 h-8"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Author info -->
+                    <div class="mt-auto">
+                      <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-accent-yellow-dark flex items-center justify-center">
+                          <Icon name="mdi:account" class="w-8 h-8 text-neutral-700" />
+                        </div>
+                        <div>
+                          <h3 class="font-semibold">{story.author}</h3>
+                          <p class="text-sm text-white/80">{story.condition}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Detailed testimonial -->
+                    <div class="mt-6 text-sm text-neutral-300 italic">
+                      {story.testimonial}
+                    </div>
+
+                    <!-- Leaf decoration -->
+                    <Icon
+                      name="mdi:leaf"
+                      class="absolute right-0 top-1/2 -translate-y-1/2 w-3/4 h-3/4 text-accent-orange/10"
+                    />
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <!-- Custom horizontal pagination -->
+        <div class="flex justify-center gap-4 mt-6">
+          {
+            successStories.map((_, index) => (
+              <button
+                class={`pagination-bullet-horizontal w-8 h-2 rounded-full transition-all duration-300 ${
+                  index === 0 ? "active" : ""
+                }`}
+                data-index={index}
+                style="background-color: rgba(51, 51, 51, 0.2);"
+              />
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</FullWidthContainer>
+
+<script>
+  import Swiper from "swiper";
+  import { Mousewheel } from "swiper/modules";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Vertical swiper
+    const swiperVertical = new Swiper(".success-swiper-vertical", {
+      modules: [Mousewheel],
+      direction: "vertical",
+      slidesPerView: 1,
+      spaceBetween: 30,
+      mousewheel: true,
+      initialSlide: 0,
+      loop: false,
+      centeredSlides: true,
+      grabCursor: true,
+    });
+
+    // Horizontal swiper
+    const swiperHorizontal = new Swiper(".success-swiper-horizontal", {
+      direction: "horizontal",
+      slidesPerView: 1,
+      spaceBetween: 30,
+      initialSlide: 0,
+      centeredSlides: true,
+      loop: false,
+      grabCursor: true,
+    });
+
+    // Vertical pagination
+    const verticalBullets = document.querySelectorAll(".pagination-bullet-vertical");
+    verticalBullets.forEach((bullet) => {
+      bullet.addEventListener("click", () => {
+        const index = parseInt(bullet.getAttribute("data-index"));
+        swiperVertical.slideTo(index);
+      });
+    });
+
+    swiperVertical.on("slideChange", () => {
+      verticalBullets.forEach((bullet, index) => {
+        bullet.classList.toggle("active", index === swiperVertical.activeIndex);
+      });
+    });
+
+    // Horizontal pagination
+    const horizontalBullets = document.querySelectorAll(".pagination-bullet-horizontal");
+    horizontalBullets.forEach((bullet) => {
+      bullet.addEventListener("click", () => {
+        const index = parseInt(bullet.getAttribute("data-index"));
+        swiperHorizontal.slideTo(index);
+      });
+    });
+
+    swiperHorizontal.on("slideChange", () => {
+      horizontalBullets.forEach((bullet, index) => {
+        bullet.classList.toggle("active", index === swiperHorizontal.activeIndex);
+      });
+    });
+  });
+</script>
+
+<style>
+  .pagination-bullet-vertical,
+  .pagination-bullet-horizontal {
+    display: block !important;
+    position: relative !important;
+    transition: all 0.3s ease;
+  }
+
+  .pagination-bullet-vertical {
+    height: 64px;
+  }
+
+  .pagination-bullet-vertical.active {
+    height: 32px;
+    background-color: #48382E !important;
+  }
+
+  .pagination-bullet-horizontal {
+    width: 32px;
+  }
+
+  .pagination-bullet-horizontal.active {
+    width: 16px;
+    background-color: #48382E !important;
+  }
+
+  .pagination-bullet-vertical:hover,
+  .pagination-bullet-horizontal:hover {
+    background-color: rgba(51, 51, 51, 0.4);
+  }
+
+  .success-swiper-horizontal,
+  .success-swiper-vertical {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .swiper-slide {
+    width: 100%;
+    height: 100%;
+  }
+
+  .success-swiper-horizontal {
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem 0 !important;
+  }
+
+  .success-swiper-horizontal .swiper-slide {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .swiper-pagination {
+    position: relative !important;
+    bottom: 0 !important;
+    margin-top: 1rem;
+  }
+
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(51, 51, 51, 0.2);
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: rgba(51, 51, 51, 0.8);
+  }
+</style>
+

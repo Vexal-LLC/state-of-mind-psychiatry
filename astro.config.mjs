@@ -23,7 +23,7 @@ export default defineConfig({
     mdx(),
     icon(),
     robots({
-      host: "https://stateofmindpsychiatric.com",
+      host: "www.stateofmindpsychiatric.com",
       sitemap: [
         "https://stateofmindpsychiatric.com/sitemap-index.xml",
         "https://www.stateofmindpsychiatric.com/sitemap-index.xml",

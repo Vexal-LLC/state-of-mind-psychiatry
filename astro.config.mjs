@@ -8,6 +8,8 @@ import vercel from "@astrojs/vercel";
 
 import icon from "astro-icon";
 
+import robots from "astro-robots";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -17,6 +19,7 @@ export default defineConfig({
     }),
     mdx(),
     icon(),
+    robots(),
   ],
 
   adapter: vercel({

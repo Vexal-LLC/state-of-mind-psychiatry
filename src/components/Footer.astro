@@ -1,126 +1,118 @@
 ---
 import { Icon } from "astro-icon/components";
+import FullWidthContainer from "~/components/FullWidthContainer.astro";
 ---
 
-<footer class="bg-white" aria-label="Site footer">
-  <!-- Main Footer Content -->
-  <div class="w-full overflow-hidden bg-zinc-900 px-6 py-12">
-    <div class="mx-auto max-w-7xl">
-      <!-- Top Section with Logo and Navigation -->
-      <div
-        class="flex flex-col items-center lg:items-start lg:flex-row lg:justify-between gap-8 mb-16 text-center lg:text-left"
+<FullWidthContainer
+  as="footer"
+  class="bg-zinc-900 py-12"
+  aria-label="Site footer"
+>
+  <!-- Top Section with Logo and Navigation -->
+  <div
+    class="flex flex-col items-center justify-center lg:items-start lg:flex-row lg:justify-between gap-8 mb-16 text-center lg:text-left"
+  >
+    <!-- Logo Section -->
+    <div class="text-white text-xl font-sans">State of Mind Psychiatry</div>
+
+    <!-- Navigation Links -->
+    <nav
+      class="flex flex-wrap gap-x-4 sm:gap-x-8 gap-y-3"
+      aria-label="Footer navigation"
+      role="navigation"
+    >
+      <a href="/" class="text-gray-300 hover:text-white transition-colors"
+        >Home</a
       >
-        <!-- Logo Section -->
-        <div class="text-white text-xl font-sans">State of Mind Psychiatry</div>
-
-        <!-- Navigation Links -->
-        <nav
-          class="flex flex-wrap gap-x-8 gap-y-3"
-          aria-label="Footer navigation"
-          role="navigation"
-        >
-          <a href="/" class="text-gray-300 hover:text-white transition-colors"
-            >Home</a
-          >
-          <a
-            href="/about"
-            class="text-gray-300 hover:text-white transition-colors">About</a
-          >
-          <a
-            href="/services"
-            class="text-gray-300 hover:text-white transition-colors">Services</a
-          >
-          <a
-            href="/contact"
-            class="text-gray-300 hover:text-white transition-colors">Contact</a
-          >
-        </nav>
-      </div>
-
-      <!-- Book Now CTA Section -->
-      <div class="border border-zinc-600 rounded-3xl p-8 mb-16">
-        <div
-          class="flex flex-col lg:flex-row items-center justify-between gap-8"
-        >
-          <div class="text-center lg:text-left">
-            <h2 class="text-white text-2xl lg:text-3xl font-serif mb-2">
-              Start
-              <span class="text-accent-yellow-dark relative">
-                Your Journey
-                <span
-                  class="absolute bottom-0 left-0 h-1 w-full bg-accent-yellow-dark/20"
-                ></span>
-              </span>
-              <span class="relative"> Today</span>
-            </h2>
-            <p class="text-gray-400">
-              Schedule your consultation with our experienced team
-            </p>
-          </div>
-          <button
-            class="inline-flex items-center px-6 py-3 rounded-full font-semibold bg-accent-yellow-dark text-black hover:bg-accent-yellow-dark/90 hover:text-black/80 group transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-            onclick="openModal()"
-          >
-            Book Appointment
-            <Icon
-              name="mdi:arrow-right"
-              class="w-5 h-5 ml-1 transition-transform duration-300 group-hover:translate-x-1"
-            />
-          </button>
-        </div>
-      </div>
-
-      <!-- Bottom Section -->
-      <div
-        class="flex flex-col items-center lg:items-start lg:flex-row lg:justify-between gap-8 text-center lg:text-left"
+      <a href="/about" class="text-gray-300 hover:text-white transition-colors"
+        >About</a
       >
-        <!-- Social Links -->
-        <div class="flex justify-center gap-6">
-          <a href="#" class="text-gray-400 hover:text-white transition-colors">
-            <span class="sr-only">Twitter</span>
-            <Icon name="mdi:twitter" class="w-6 h-6" />
-          </a>
-          <a href="#" class="text-gray-400 hover:text-white transition-colors">
-            <span class="sr-only">Instagram</span>
-            <Icon name="mdi:instagram" class="w-6 h-6" />
-          </a>
-          <a href="#" class="text-gray-400 hover:text-white transition-colors">
-            <span class="sr-only">LinkedIn</span>
-            <Icon name="mdi:linkedin" class="w-6 h-6" />
-          </a>
-        </div>
+      <a
+        href="/contact"
+        class="text-gray-300 hover:text-white transition-colors">Contact</a
+      >
+    </nav>
+  </div>
 
-        <!-- Copyright -->
-        <div class="text-gray-400 text-sm text-center space-y-1">
-          <p>
-            © {new Date().getFullYear()} State of Mind Psychiatry, LLC. All Rights
-            Reserved
-          </p>
-          <p class="pt-2">
-            Made with <Icon name="mdi:heart" class="w-4 h-4 inline" /> by
-            <a
-              href="https://links.justinsmith.sh"
-              class="hover:text-white transition-colors underline text-gray-300"
-              target="_blank"
-              rel="noopener noreferrer">Justin Smith</a
-            >
-          </p>
-        </div>
-
-        <!-- Footer Links -->
-        <div class="flex justify-center gap-6">
-          <a
-            href="/privacy"
-            class="text-gray-400 hover:text-white transition-colors text-sm"
-            >Privacy</a
-          >
-          <a
-            href="/sitemap"
-            class="text-gray-400 hover:text-white transition-colors text-sm"
-            >Sitemap</a
-          >
-        </div>
+  <!-- Book Now CTA Section -->
+  <div class="border border-zinc-600 rounded-3xl p-6 sm:p-8 mb-16">
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div class="text-center lg:text-left">
+        <h2 class="text-white text-2xl lg:text-3xl font-serif mb-2">
+          Start
+          <span class="text-accent-yellow-dark relative">
+            Your Journey
+            <span
+              class="absolute bottom-0 left-0 h-1 w-full bg-accent-yellow-dark/20"
+            ></span>
+          </span>
+          <span class="relative"> Today</span>
+        </h2>
+        <p class="text-gray-400">
+          Schedule your consultation with our experienced team
+        </p>
       </div>
+      <button
+        class="inline-flex items-center px-6 py-3 rounded-full font-semibold bg-accent-yellow-dark text-black hover:bg-accent-yellow-dark/90 hover:text-black/80 group transition-all duration-200 hover:shadow-lg hover:-translate-y-1"
+        onclick="openModal()"
+      >
+        Book Appointment
+        <Icon
+          name="mdi:arrow-right"
+          class="w-5 h-5 ml-1 transition-transform duration-200 group-hover:translate-x-1"
+        />
+      </button>
     </div>
   </div>
-</footer>
+
+  <!-- Bottom Section -->
+  <div
+    class="flex flex-col items-center lg:items-start lg:flex-row lg:justify-between gap-8 text-center lg:text-left"
+  >
+    <!-- Social Links -->
+    <div class="flex justify-center gap-6">
+      <a href="#" class="text-gray-400 hover:text-white transition-colors">
+        <span class="sr-only">Twitter</span>
+        <Icon name="mdi:twitter" class="w-6 h-6" />
+      </a>
+      <a href="#" class="text-gray-400 hover:text-white transition-colors">
+        <span class="sr-only">Instagram</span>
+        <Icon name="mdi:instagram" class="w-6 h-6" />
+      </a>
+      <a href="#" class="text-gray-400 hover:text-white transition-colors">
+        <span class="sr-only">LinkedIn</span>
+        <Icon name="mdi:linkedin" class="w-6 h-6" />
+      </a>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-gray-400 text-sm text-center space-y-1">
+      <p>
+        © {new Date().getFullYear()} State of Mind Psychiatry, LLC. All Rights Reserved
+      </p>
+      <p class="pt-2">
+        Made with <Icon name="mdi:heart" class="w-4 h-4 inline" /> by
+        <a
+          href="https://links.justinsmith.sh"
+          class="hover:text-white transition-colors underline text-gray-300"
+          target="_blank"
+          rel="noopener noreferrer">Justin Smith</a
+        >
+      </p>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="flex justify-center gap-6">
+      <a
+        href="/privacy"
+        class="text-gray-400 hover:text-white transition-colors text-sm"
+        >Privacy</a
+      >
+      <a
+        href="/sitemap"
+        class="text-gray-400 hover:text-white transition-colors text-sm"
+        >Sitemap</a
+      >
+    </div>
+  </div>
+</FullWidthContainer>

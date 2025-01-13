@@ -416,7 +416,6 @@ import { Icon } from "astro-icon/components";
 
   // Add this new scroll handler
   const header = document.getElementById("main-header");
-  let lastScroll = 0;
 
   window.addEventListener("scroll", () => {
     const currentScroll = window.scrollY;
@@ -428,7 +427,5 @@ import { Icon } from "astro-icon/components";
       header?.classList.remove("shadow-none");
       header?.classList.add("shadow-sm");
     }
-
-    lastScroll = currentScroll;
   });
 </script>

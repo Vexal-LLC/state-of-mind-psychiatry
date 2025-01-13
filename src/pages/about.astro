@@ -6,15 +6,12 @@ import Pill from "~/components/Pill.astro";
 import { getCollection } from "astro:content";
 import hangingLogoHero from "~/assets/hangingLogo.jpeg";
 import therapyRoom from "~/assets/room.jpeg";
+import type { ImageMetadata } from "astro";
 
-// Get all team members
+// Get all team members using the collection type
 const teamMembers = await getCollection("team").then((members) =>
   members.sort((a, b) => a.data.name.localeCompare(b.data.name))
 );
-
-const allSpecialties = [
-  ...new Set(teamMembers.flatMap((member) => member.data.specialties || [])),
-].sort();
 
 // Define common psychiatric services
 const clinicServices = [
@@ -116,7 +113,7 @@ const clinicServices = [
               {/* Left Column - Photo */}
               <div class="w-full lg:w-72 shrink-0 h-64 lg:h-full">
                 <Image
-                  src={member.data.image}
+                  src={member.data.image as ImageMetadata}
                   alt={`${member.data.name} photo`}
                   class="w-full h-full rounded-2xl object-cover shadow-md"
                   quality="high"

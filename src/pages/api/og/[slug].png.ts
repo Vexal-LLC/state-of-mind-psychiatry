@@ -8,7 +8,7 @@ interface Props {
   request: Request;
 }
 
-export async function GET({ params, request }: Props) {
+export async function GET({ params }: Props) {
   // Load fonts
   const interRegular = await fs.readFile(
     path.join(
@@ -30,12 +30,6 @@ export async function GET({ params, request }: Props) {
       "node_modules/@fontsource/vollkorn/files/vollkorn-latin-800-normal.woff"
     )
   );
-
-  // Load favicon
-  const favicon = await fs.readFile(
-    path.join(process.cwd(), "public", "favicon.png")
-  );
-  const faviconDataUrl = `data:image/png;base64,${favicon.toString("base64")}`;
 
   const templates = {
     home: () => ({

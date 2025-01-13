@@ -15,7 +15,7 @@ const { id = "booking-modal", intakeqId } = Astro.props;
   aria-labelledby="modal-title"
   role="dialog"
   aria-modal="true"
-  onclick="if (event.target === this) closeModal()"
+  onclick="(e) => { if (e.target === this) closeModal() }"
 >
   <!-- Backdrop -->
   <div
@@ -71,7 +71,7 @@ const { id = "booking-modal", intakeqId } = Astro.props;
   </div>
 </div>
 
-<script define:vars={{ intakeqId }}>
+<script define:vars={{ intakeqId }} is:inline>
   /**
    * @typedef {Object} CustomWindow
    * @property {string} intakeq

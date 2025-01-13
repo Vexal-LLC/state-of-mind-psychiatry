@@ -9,7 +9,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://stateofmindpsychiatric.com",
+  site: "https://state-of-mind-psychiatry-git-pre-final-0112-vexal.vercel.app",
   integrations: [
     react(),
     tailwind({

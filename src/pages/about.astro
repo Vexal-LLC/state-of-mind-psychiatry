@@ -13,7 +13,6 @@ const teamMembers = await getCollection("team").then((members) =>
   members.sort((a, b) => a.data.name.localeCompare(b.data.name))
 );
 
-// Define common psychiatric services
 const clinicServices = [
   {
     title: "Psychiatric Evaluation",
@@ -30,10 +29,6 @@ const clinicServices = [
   {
     title: "Trauma Therapy",
     description: "Treatment for PTSD and other trauma-related disorders",
-  },
-  {
-    title: "Group Counseling",
-    description: "Supportive group sessions for various mental health issues",
   },
 ];
 ---

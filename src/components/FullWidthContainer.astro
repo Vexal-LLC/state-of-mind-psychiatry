@@ -1,14 +1,32 @@
 ---
+import type { ImageMetadata } from "astro";
+
 interface Props {
   class?: string;
   id?: string;
+  backgroundImage?: ImageMetadata;
+  as?: keyof HTMLElementTagNameMap;
 }
 
-const { class: className = "", id } = Astro.props;
+const {
+  class: className = "",
+  id,
+  backgroundImage,
+  as: Element = "section",
+} = Astro.props;
+
+const backgroundStyle = backgroundImage
+  ? {
+      backgroundImage: `url('${backgroundImage.src}')`,
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "contain",
+      backgroundPosition: "center",
+    }
+  : undefined;
 ---
 
-<section class:list={["w-full", className]} id={id}>
-  <div class="max-w-7xl mx-auto px-4">
+<Element class:list={["w-full", className]} id={id} style={backgroundStyle}>
+  <div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
     <slot />
   </div>
-</section>
+</Element>

@@ -3,13 +3,13 @@ import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
-
 import vercel from "@astrojs/vercel";
-
 import icon from "astro-icon";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://state-of-mind-psychiatry-git-pre-final-0112-vexal.vercel.app",
   integrations: [
     react(),
     tailwind({
@@ -17,6 +17,11 @@ export default defineConfig({
     }),
     mdx(),
     icon(),
+    sitemap({
+      changefreq: "weekly",
+      priority: 0.7,
+      lastmod: new Date(),
+    }),
   ],
 
   adapter: vercel({

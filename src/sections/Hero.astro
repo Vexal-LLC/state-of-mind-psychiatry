@@ -3,30 +3,33 @@ import { Image } from "astro:assets";
 import brainPuzzle from "../assets/brain-puzzle.svg";
 import Pill from "~/components/Pill.astro";
 import { Icon } from "astro-icon/components";
+import FullWidthContainer from "~/components/FullWidthContainer.astro";
 ---
 
 <div class="relative isolate">
   <div class="overflow-hidden">
-    <div
-      class="mx-auto max-w-7xl px-6 pb-16 sm:pb-24 lg:pb-32 pt-12 sm:pt-8 lg:px-8"
-    >
+    <FullWidthContainer class="my-16">
       <div
-        class="mx-auto max-w-2xl gap-x-14 lg:mx-0 md:flex md:max-w-none md:items-center md:justify-between"
+        class="mx-auto max-w-2xl gap-x-14 lg:mx-0 md:flex md:max-w-none md:items-start md:justify-between"
       >
         <!-- Left content -->
-        <div class="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
+        <div
+          class="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl h-full"
+        >
           <div class="flex">
             <div class="group">
               <Pill variant="light">
-                Trusted by 100+ clients.
+                Trusted by our clients.
                 <button
-                  class="ml-2 inline-flex items-center font-semibold text-primary/90 transition-colors hover:text-primary-dark"
+                  class="ml-1 inline-flex items-center font-semibold text-primary/90 transition-colors hover:text-primary-dark"
                   onclick="e => e.preventDefault(); document.getElementById('success-stories').scrollIntoView({ behavior: 'smooth' })"
                 >
-                  See success stories
+                  See&nbsp;
+                  <span class="hidden md:inline">success stories</span>
+                  <span class="inline md:hidden">testimonials</span>
                   <Icon
                     name="mdi:arrow-right"
-                    class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
+                    class="ml-[0.125rem] h-4 w-4 transition-transform group-hover:translate-x-1"
                   />
                 </button>
               </Pill>
@@ -46,7 +49,7 @@ import { Icon } from "astro-icon/components";
           </h1>
           <div class="relative mt-8">
             <p
-              class="text-pretty text-lg font-normal text-gray-600 sm:text-xl/8 relative"
+              class="text-pretty text-lg font-normal text-gray-700 sm:text-xl relative"
             >
               Expert outpatient mental health care that adapts to your unique
               journey. Our comprehensive approach helps you build a stronger,
@@ -58,12 +61,12 @@ import { Icon } from "astro-icon/components";
           <div class="mt-10 flex items-center gap-x-6">
             <button
               onclick="openModal()"
-              class="inline-flex items-center px-6 py-3 rounded-full text-md font-medium bg-black text-white hover:bg-primary-light group transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              class="inline-flex items-center px-6 py-3 rounded-full text-md font-medium bg-black text-white hover:bg-primary-light group transition-all duration-200 hover:shadow-lg hover:-translate-y-1"
             >
               Schedule Now
             </button>
             <a
-              href="#"
+              href="/about"
               class="group relative text-md font-semibold text-gray-900"
             >
               Get to know us
@@ -72,14 +75,14 @@ import { Icon } from "astro-icon/components";
                 class="inline-block ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
               />
               <span
-                class="absolute -bottom-1 left-0 h-[3px] w-full origin-left scale-x-0 bg-accent-orange transition-transform duration-300 group-hover:scale-x-100"
+                class="absolute -bottom-1 left-0 h-[3px] w-full origin-left scale-x-0 bg-accent-orange transition-transform duration-200 group-hover:scale-x-100"
               ></span>
             </a>
           </div>
         </div>
 
         <!-- Modify the right side image to only show on large screens -->
-        <div class="hidden md:block md:mt-0">
+        <div class="hidden md:block">
           <Image
             src={brainPuzzle}
             width={1024}
@@ -91,6 +94,6 @@ import { Icon } from "astro-icon/components";
           />
         </div>
       </div>
-    </div>
+    </FullWidthContainer>
   </div>
 </div>

@@ -23,7 +23,7 @@ const successStories = [
 
 <FullWidthContainer id="success-stories" class="bg-neutral-300 py-16 md:py-24">
   <div
-    class="flex flex-col md:flex-row gap-12 items-center max-w-7xl mx-auto px-4 pb-8 md:py-0"
+    class="flex flex-col md:flex-row gap-12 items-center max-w-7xl mx-auto pb-8 md:py-0"
   >
     <!-- Left Content -->
     <div class="space-y-6 md:w-1/2 lg:w-2/3">
@@ -41,7 +41,7 @@ const successStories = [
         >
       </h2>
 
-      <p class="text-xl text-gray-600">
+      <p class="text-xl text-gray-700 max-w-xl">
         Discover how we've helped our patients achieve better mental health and
         improved quality of life.
       </p>
@@ -54,7 +54,7 @@ const successStories = [
         {
           successStories.map((_, index) => (
             <button
-              class={`pagination-bullet-vertical w-2 h-16 rounded-full transition-all duration-300 ${
+              class={`pagination-bullet-vertical w-2 h-16 rounded-full transition-all duration-200 ${
                 index === 0 ? "active" : ""
               }`}
               data-index={index}
@@ -180,7 +180,7 @@ const successStories = [
           {
             successStories.map((_, index) => (
               <button
-                class={`pagination-bullet-horizontal w-8 h-2 rounded-full transition-all duration-300 ${
+                class={`pagination-bullet-horizontal w-8 h-2 rounded-full transition-all duration-200 ${
                   index === 0 ? "active" : ""
                 }`}
                 data-index={index}

@@ -16,7 +16,7 @@ import { Icon } from "astro-icon/components";
       <div class="hidden sm:block">
         <!-- Address -->
         <a href="#" id="maps-link-desktop">
-          12183 Highway 182 W Starkville, MS 39759
+          12183 Highway 182 W, Suite 103 Starkville, MS 39759
         </a>
       </div>
 
@@ -274,8 +274,8 @@ import { Icon } from "astro-icon/components";
         <div class="mb-6 text-md text-gray-700">
           <p class="font-semibold text-gray-900 mb-2">Visit Us</p>
           <a href="#" id="maps-link-mobile" class="text-gray-900">
-            12183 Highway 182 W<br />
-            Starkville, MS 39759
+            12183 Highway 182 W,<br />
+            Suite 103 Starkville, MS 39759
           </a>
         </div>
 
@@ -390,7 +390,7 @@ import { Icon } from "astro-icon/components";
   const mapsLinkMobile = document.getElementById(
     "maps-link-mobile"
   ) as HTMLAnchorElement;
-  const address = "12183 Highway 182 W, Starkville, MS 39759";
+  const address = "12183 Highway 182 W, Suite 103 Starkville, MS 39759";
   const encodedAddress = encodeURIComponent(address);
 
   // Detect iOS
